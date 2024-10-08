@@ -1,0 +1,6 @@
+定义与SQL映射文件同名的Mapper接口，并且将Mapper接口和SQL映射文件放置在同一目录下
+设置SQL映射文件的namespace属性为Mapper接口全限定名
+在 Mapper 接口中定义方法，方法名就是SQL映射文件中sql语句的id，并保持参数类型和返回值类型一致
+编码
+1.通过 SqlSession 的 getMapper方法获取 Mapper接囗的代理对象
+2.调用对应方法完成sql的执行
