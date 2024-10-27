@@ -10,7 +10,7 @@
     * **size(), isEmpty(),clear(）**
     * **toArray(String[]::new);**
     * **removeIf(Predicate<? super E> filter)**
-    * **of()创建不可变结构，但是若里面元素是可变的就可以更改**
+    * **of()创建不可变结构，但是如果是一个Java类，允许修改对象里面的字段，因为不会更改这类的地址**
         ```
         List<UseForTest> a = List.of(new UseForTest(1, "a"), new UseForTest(2,"b"));
         a.get(0).setName("aaa");
@@ -38,7 +38,7 @@ iterator.remove()
 **常用方法**
 * **创建**
     * ```new ArrayList<>(List.of(...)); ```
-    * Arrays.asList()**相当于数组，不能改变大小，增加删除元素**
+    * Arrays.asList()**相当于数组，不能改变大小，增加删除元素，可以修改元素**
 * **增删改查**
     * add(index, element)
     * get(index)

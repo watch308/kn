@@ -60,8 +60,8 @@
     ```
 #### reduce
 ##### Binary Operators 满足条件
-1) Binary Operators That Do Have Any Identity Element **恒等元素**
-2) Binary operator should have associativity **结合律**
+1) Binary Operators That Do Have Any Identity Element **恒等元素** 如果没有则returns an instance of the Optional class
+2) Binary operator should have associativity **结合律** 并行流要求满足
 
 ##### 三个重载
 * T reduce(T identity, BinaryOperator<T> accumulator)
