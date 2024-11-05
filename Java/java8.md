@@ -34,10 +34,12 @@
 6) collect 
     * 放到list set 或者map里面, map中的键不能重复
 ```strings.stream().collect(Collectors.toMap(s1 -> s1.substring(0, 1), s2 -> s2.substring(1)));```
+    ```strings.stream().collect(Collectors.toMap(s1 -> s1.substring(0, 1), s2 -> s2.substring(1)));```
     * **两种coolect**
     ```
     Stream<String> strings = Stream.of("one", "two", "three", "four");
 
+    
     List<String> result = 
         strings.filter(s -> s.length() == 3)
             .map(String::toUpperCase)
@@ -46,18 +48,25 @@
     ```
     Stream<String> strings = Stream.of("one", "two", "three", "four");
 
+    
     List<String> result = 
         strings.filter(s -> s.length() == 3)
             .map(String::toUpperCase)
             .collect(Collectors.toList());//可变list
 
+    
     ```
+    * **toMap**
+    * `toMap(Function keyMapper, Function valueMapper, BinaryOperator mergeFunction, Supplier mapSupplier)`
+      *  mergeFunction ：重复策略  返回新值(oldValue, newValue) -> newValue
+      * Supplier mapSupplier：返回一个`Map`的类型 eg. LinkedHashMap::new
     ```
     Map<String, Integer> newMap = originalMap.entrySet()  
             .stream()  
             .filter(entry -> entry.getValue() > 1) // 过滤条件示例  
             .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)); 
     ```
+    **注意当 value 为 null 时会抛 NPE 异常。**
 #### reduce
 ##### Binary Operators 满足条件
 1) Binary Operators That Do Have Any Identity Element **恒等元素** 如果没有则returns an instance of the Optional class
