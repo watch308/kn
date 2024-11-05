@@ -33,12 +33,10 @@
 ```String[] array1 = strings.toArray(value -> new String[value]);```
 6) collect 
     * 放到list set 或者map里面, map中的键不能重复
-```strings.stream().collect(Collectors.toMap(s1 -> s1.substring(0, 1), s2 -> s2.substring(1)));```
     ```strings.stream().collect(Collectors.toMap(s1 -> s1.substring(0, 1), s2 -> s2.substring(1)));```
     * **两种coolect**
     ```
     Stream<String> strings = Stream.of("one", "two", "three", "four");
-
     
     List<String> result = 
         strings.filter(s -> s.length() == 3)
@@ -47,13 +45,11 @@
     ```
     ```
     Stream<String> strings = Stream.of("one", "two", "three", "four");
-
     
     List<String> result = 
         strings.filter(s -> s.length() == 3)
             .map(String::toUpperCase)
             .collect(Collectors.toList());//可变list
-
     
     ```
     * **toMap**
