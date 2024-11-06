@@ -102,28 +102,17 @@ https://dev.java/learn/api/collections-framework/sets/
 
 ## Queue 和Deque
 ![alt text](image-2.png)
-###   基础操作
-- **push(element)**: Adds an element to the stack.  
-- **pop()**: Removes the youngest element added to the stack.  
-- **peek()**: Allows you to see the element you will get with a `pop()`, but without removing it from the stack.  
+### 三种实现类
+* new LinkedList<>();
+* ArrayDeque
+* PriorityQueue
+### Queue方法
+* add(E e) 和 offer(E e)
+* remove() 和 poll()
+* element() 和 peek() 获取队列头部的元素，但不移除
 
-### Queue Operations  
-- **push(element)**: Adds an element to the queue.  
-- **poll()**: Removes the oldest element added to the queue.  
-- **peek()**: Allows you to see the element you will get with a `poll()`, but without removing it from the queue.
-
-
-### Queue Interface  
-The Queue interface models a queue.  
-
-### Deque Interface  
-The Deque interface models a double-ended queue (thus the name). You can perform the following operations on both the tail and the head of a Deque:  
-- **push**: Add an element to the Deque.  
-- **pop**: Remove an element from the Deque.  
-- **poll**: Remove an element from the Deque.  
-- **peek**: View an element in the Deque without removing it. 
-
-This makes the Deque both a queue and a stack.
+### Deque 方法
+![alt text](1730116363250.png )
 ## 2.map
 ![alt text](image-1.png)
 ### 概览
